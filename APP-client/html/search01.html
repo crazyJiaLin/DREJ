@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/search.css"/>
+  </head>
+  <body>
+    <header class="search-header-wrapper">
+      <div class="search-wrapper">
+        <div class="back-up-btn" tapmode onclick="closeSearchWin()">
+          <i class="aui-iconfont aui-icon-left"></i>
+        </div>
+        <div class="aui-searchbar-input aui-border-radius" >
+            <i class="aui-iconfont aui-icon-search"></i>
+            <form><input type="search" placeholder="请输入小区名和地址" id="search-input"></form>
+        </div>
+        <div class="go-search">
+          搜索
+        </div>
+      </div>
+      <div class="condition-wrapper">
+      <div class="search-condition"><span>区域</span><i class="arrow-down-icon"></i></div>
+      <div class="search-condition"><span>租金</span><i class="arrow-down-icon"></i></div>
+      <div class="search-condition"><span>面积</span><i class="arrow-down-icon"></i></div>
+      <div class="search-condition no-border-right"><span>更多</span><i class="arrow-down-icon"></i></div>
+    </div>
+    </header>
+    <div class="condition-detail-wrapper">
+      <div class="condition-detail-block">
+        <ul class="condition-detail-nav-01">
+          <li class="active">不限</li>
+          <li>朝阳区</li>
+          <li>南关区</li>
+          <li>绿园区</li>
+          <li>宽城区</li>
+          <li>二道区</li>
+          <li>经济技术开发区</li>
+          <li>高新技术开发区</li>
+          <li>净月旅游开发区</li>
+          <li>汽车产业开发区</li>
+          <li>农安县</li>
+          <li>九台市</li>
+          <li>双阳区</li>
+          <li>德惠市</li>
+          <li>榆树市</li>
+        </ul>
+      </div>
+      <div class="condition-detail-block">
+        <ul class="condition-detail-nav-01">
+          <li class="active">不限</li>
+          <li>500元以下</li>
+          <li>500~1000元</li>
+          <li>1000~1500元</li>
+          <li>1500元~2000元</li>
+          <li>2000元~2500元</li>
+          <li>2500~3000元</li>
+          <li>3000元以上</li>
+        </ul>
+      </div>
+      <div class="condition-detail-block">
+        <ul class="condition-detail-nav-01">
+          <li class="active">不限</li>
+          <li>20平方米以下</li>
+          <li>20~50平方米</li>
+          <li>50~100平方米</li>
+          <li>100~150平方米</li>
+          <li>150~200平方米</li>
+          <li>200平方米以上</li>
+        </ul>
+      </div>
+      <div class="condition-detail-block">
+        <div class="condition-detail-more-wrapper">
+          <div class="condition-detail-more">
+            <div class="condition-title">户型</div>
+            <div class="condition-option">
+              <li class="active">不限</li>
+              <li>一室一厅</li>
+              <li>两室一厅</li>
+              <li>两室两厅</li>
+              <li>三室一厅</li>
+              <li>三室两厅</li>
+              <li>三室三厅</li>
+              <li>三室以上</li>
+              <li>三厅以上</li>
+            </div>
+          </div>
+          <div class="condition-detail-more">
+            <div class="condition-title">出租方式</div>
+            <div class="condition-option">
+              <li class="active">不限</li>
+              <li>整租</li>
+              <li>合租</li>
+            </div>
+          </div>
+          <div class="condition-detail-more last-detail-more">
+            <div class="condition-title">装修</div>
+            <div class="condition-option">
+              <li class="active">不限</li>
+              <li>精装修</li>
+              <li>普通装修</li>
+            </div>
+          </div>
+        </div>
+        <div class="confirm-condition-more-wrapper">
+          <div class="go-reset-btn">重置</div>
+          <div class="go-confirm-btn">确认</div>
+        </div>
+      </div>
+    </div>
+    <div class="search-results-wrapper">
+      <ul class="rent-results-wrapper">
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+        <li>
+          <div class="results-img-wrapper">
+            <div class="results-img"></div>
+          </div>
+          <div class="results-detail">
+            <div class="results-title">找好房，上德融，给您最好的房源保障</div>
+            <div class="results-info">三室一厅 / 21㎡ / 南北 / 5楼</div>
+            <div class="results-labels-wrapper">
+              <div class="results-label primary-label">整租</div>
+              <div class="results-label">押一付三</div>
+              <div class="results-label">精装修</div>
+            </div>
+            <div class="results-money">1500/月</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/zepto.min.js"></script>
+  <script type="text/javascript" src="../script/search.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function closeSearchWin(){
+        api.closeWin();
+      }
+  </script>
+  </html>

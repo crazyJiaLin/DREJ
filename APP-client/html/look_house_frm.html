@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+
+      <style>
+
+      </style>
+  </head>
+  <body>
+    <ul class="aui-list aui-media-list" tapmode onclick="fnOpenDetail()">
+      <li class="aui-list-item">
+          <div class="aui-media-list-item-inner">
+              <div class="aui-list-item-media">
+                  <img src="../image/baike/touxiang.jpg">
+              </div>
+              <div class="aui-list-item-inner">
+                  <div class="aui-list-item-text">
+                      <div class="aui-list-item-title">
+                        <span style="font-size:0.8rem;"> 体育场路26号二室一厅一卫</span></div>
+                      <div class="aui-list-item-right"><span style="color:red;font-size:0.7rem;"> 170万</span></div>
+                  </div>
+                  <div class="aui-list-item-text">
+                    <span style="font-size:0.6rem; line-height:1rem; color:black;">2室1厅1卫 & 50.26㎡ & 南</span>
+                  </div>
+                  <div class="aui-list-item-text">
+                    <span style="font-size:0.6rem; line-height:1rem; color:#999;">
+                      良乡 & 体育场路26号
+                    </span>
+                  </div>
+                  <div class="aui-list-item-text">
+                    <span style="font-size:0.6rem; line-height:1rem; color:#999;">
+                      33824元/㎡
+                    </span>
+                  </div>
+              </div>
+          </div>
+          <div class="aui-info" style="padding-top:0">
+              <div class="aui-info-item">
+                  <img src="../image/baike/touxiang.jpg" style="width:1rem" class="aui-img-round"><span class="aui-margin-l-5">流浪男</span>
+                  </div>
+              <div class="aui-info-item">2015-07-14 10:31</div>
+          </div>
+      </li>
+    </ul>
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function fnOpenDetail(){
+        api.openWin({
+            name: 'show-second-detail',
+            url: './show-second-detail.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+      }
+  </script>
+  </html>

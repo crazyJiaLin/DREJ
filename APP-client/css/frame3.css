@@ -1,0 +1,114 @@
+body{
+  background: #f5f5f5;
+  padding-bottom: 15px;
+}
+.user_login{
+  height: 130px;
+  width: 100%;
+  background: #fff;
+  border-top: solid 1px #fff;
+  }
+.user_head{
+  height: 65px;
+  width: 65px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 32px 20px 0;
+  float: left;
+}
+.user_head a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: center center no-repeat;
+  background-image:  url('../image/user-center/default-user.png');
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+}
+.user_head a span{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 13px;
+  padding-top: 3px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+.user_login .login{
+  float: left;
+  margin: 20px 0 0 10px;
+  font-size: 24px;
+  height: 80px;
+  line-height: 80px;
+}
+.edit-user-info{
+  width: 30px;
+  height: 30px;
+  /*background: yellow;*/
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  text-align: center;
+  line-height: 30px;
+}
+.edit-user-info i{
+  font-size: 20px;
+  font-weight: bold;
+  color:#999;
+}
+
+.MiddleColumn{
+  height:80px;
+  width: 100%;
+  margin-top: 15px;
+  background: #fff;
+  box-shadow: 0 -3px 10px #ddd;
+}
+.MiddleColumn img{
+  width: 150px;
+  height: 80px;
+  float: left;
+}
+.MiddleColumn .text{
+  width: 120px;
+  height: 80px;
+  float: left;
+}
+  .MiddleColumn .text .text_tit{
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .MiddleColumn .text .text_con{
+    font-size: 12px;
+  }
+  .user_tool{
+    width: 100%;
+    background: #fff;
+    margin: 15px 0 20px;
+    box-shadow: 0 -3px 10px #ddd;
+  }
+  .user_tool li{
+    width: 100%;;
+    height: 50px;
+    line-height: 50px;
+    color: #000;
+    border-bottom: solid 1px #ddd;
+  }
+    .tool_:after{content:""; display:block; height:0; clear:both; visibility:hidden;}
+  .user_tool li i{
+    float: right;
+    width: 30px;
+    height: 100%;
+  }
+  .user_tool li span{
+    font-size: 16px;
+    float: left;
+    height: 100%;
+    padding-left: 15px;
+  }

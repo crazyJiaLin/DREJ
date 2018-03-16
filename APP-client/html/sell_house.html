@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/sell_house.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+
+      <style>
+
+      </style>
+  </head>
+  <body >
+    <header class="header" id="header">
+      <span class="back" tapmode onclick="api.closeWin()"></span>
+      我要卖房
+    </header>
+    <div class="admin-login-wrapper">
+      <div class="enter-password">
+        <label>密码：</label>
+        <input type="password" class="password" placeholder="请输入管理员密码">
+      </div>
+    </div>
+    <!-- <div class="bottom" id="footer">
+      发布房源
+    </div> -->
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script src="../script/zepto.min.js" charset="utf-8"></script>
+  <script src="../script/md5.js" charset="utf-8"></script>
+  <script type="text/javascript">
+      apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('header');
+    		var headerH = $api.offset(header).h;
+        var height = api.winHeight - headerH;
+
+        // // //通过本地登陆的用户查看是否是管理员
+        // api.ajax({
+        //     url: window.reqUrl + '/isAdmin',
+        //     method: 'post',
+        //     dataType : 'json',
+        //     data: {
+        //         values: {
+        //             mobile: '15699555750'
+        //           }
+        //     }
+        // },function(ret, err){
+        //     if (ret) {
+        //         // alert( JSON.stringify( ret ) );
+        //         if(ret.errCode == 1){
+        //           //管理员登陆验证
+        //           adminLogin(ret.password);
+        //         }else{
+        //           //不存在这个管理员，打开禁止页面
+        //           openForbiddenFrame(headerH,height);
+        //         }
+        //     } else {
+        //         // alert( JSON.stringify( err ) );
+        //         //ajax出错，打开禁止页面
+        //         openForbiddenFrame(headerH,height);
+        //     }
+        // });
+
+
+        api.openFrame({
+            name: 'sell_house_frm',
+            url: './sell_house_frm.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: height
+            }
+        })
+      };
+
+      // function adminLogin(adminPSD){
+      //   console.log(adminPSD);
+      //   console.log(hex_md5(hex_md5('123')));
+      // }
+      //
+      // function openForbiddenFrame(headerH,height){
+      //   api.openFrame({
+      //       name: 'forbidden_frm',
+      //       url: './forbidden.html',
+      //       bounces: false,
+      //       rect: {
+      //           x: 0,
+      //           y: headerH,
+      //           w: 'auto',
+      //           h: height
+      //       }
+      //   })
+      // }
+  </script>
+  </html>

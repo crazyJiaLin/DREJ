@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/sell_house.css"/>
+
+      <style>
+
+      </style>
+  </head>
+  <body>
+
+  </body>
+  <script src="../script/zepto.min.js" charset="utf-8"></script>
+  <script src="../script/api.js" charset="utf-8"></script>
+  <script type="text/javascript">
+        var windowWidth = 0;
+        var windowHeight = 0;
+        var map = null;
+        // var CurLoacation;
+        apiready = function(){
+          windowWidth = $(window).width();
+          windowHeight =  $(window).height();
+          map = api.require('bMap');
+          doOpenMap();
+          // openMap();
+          addClickEvent();
+        };
+         function doOpenMap(){
+
+          map.getLocation({    //获取当前位置信息
+              accuracy: '100m',
+              autoStop: true,
+              filter: 1
+          }, function(ret, err){
+              if(ret.status){
+                // console.log(JSON.stringify(ret));
+                var curLoacation = ret;
+                //通过当前位置信息打开地图，并将中心点设置为当前位置
+                  map.open({
+                      rect: {
+                          x: 0,
+                          y: 0,
+                          w: windowWidth,
+                          h: windowHeight
+                      },
+                      center: {
+                          lon: curLoacation.lon,
+                          lat: curLoacation.lat
+                      },
+                      zoomLevel: 17,
+                      showUserLocation: true,
+                      fixedOn: api.frameName,
+                      fixed: true
+                  }, function(ret) {
+                      if (ret.status) {
+                        addClickEvent();
+                      }
+                  });
+              }else{
+                  alert(err.code);
+              }
+          });
+         }
+
+         function addClickEvent(){
+           //单击事件监听，进行地图标注
+             map.addEventListener({
+                name: 'click'
+            }, function(ret) {
+                if (ret.status) {
+                  // //对点击位置进行标注
+                  // map.addAnnotations({
+                  //     annotations: [{
+                  //         id: 3,
+                  //         lon: ret.lon,
+                  //         lat: ret.lat
+                  //     }],
+                  //    //  icon: 'widget://',
+                  //     draggable: true
+                  // }, function(ret) {
+                  // });
+                  map.addBillboard({
+                      id: 4,
+                      coords: {
+                          lon: ret.lon,
+                          lat: ret.lat
+                      },
+                      bgImg: 'widget://image/bMapTest.png',
+                      content: {
+                          title: '大标题大标题大标题大标题',
+                          subTitle: '概述内容概述内容概述内容',
+                          illus: 'http://ico.ooopic.com/ajax/iconpng/?id=145044.png'
+                      },
+                      styles: {
+                          titleColor: '#000',
+                          titleSize: 16,
+                          subTitleColor: '#999',
+                          subTitleSize: 12,
+                          illusAlign: 'left'
+                      }
+                  }, function(ret) {
+                      if (ret) {
+                          alert(JSON.stringify(ret));
+                      }
+                  });
+
+                }
+            });
+         }
+  </script>
+  </html>

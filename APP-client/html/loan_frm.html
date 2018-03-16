@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/loan.css"/>
+      <style>
+
+      </style>
+  </head>
+  <body>
+
+    <div>
+      <ul class="aui-list aui-form-list">
+          <li class="aui-list-item ">
+              <div class="aui-list-item-inner">
+                  <div class="aui-list-item-label">
+                      资金需求
+                  </div>
+                  <div class="aui-list-item-input">
+                      <input type="number" placeholder="请输入您所需要的资金" >
+                  </div>
+              </div>
+          </li>
+       </ul>
+       <div class="border"></div>
+
+       <div class="fangchan">
+         <div class="fangchan_header">
+           房产抵押
+         </div>
+         <ul class="aui-list aui-form-list">
+             <li class="aui-list-item ">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         所在城市
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="text" placeholder="请输入城市所在地">
+                     </div>
+                 </div>
+             </li>
+             <li class="aui-list-item ">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         住房面积
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="number" placeholder="请输入您的住房面积" >
+                     </div>
+                 </div>
+             </li>
+
+             <!-- <div class="border"></div> -->
+          </ul>
+          <ul class="aui-list aui-select-list">
+              <li class="aui-list-item " >
+                <div class="aui-list-item-label" style="width:6rem;">
+                   有无贷款
+                </div>
+                 <div class="aui-list-item-inner">
+                   <label><input class="aui-radio" type="radio" name="radio2">是</label>
+                   <label><input class="aui-radio" type="radio" name="radio2">否</label>
+                 </div>
+             </li>
+              <div class="border"></div>
+           </ul>
+       </div>
+       <div class="fangchan">
+         <div class="fangchan_header">
+           汽车抵押
+         </div>
+         <ul class="aui-list aui-form-list">
+             <li class="aui-list-item ">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         车型
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input  placeholder="请输入您的车型" type="text">
+                     </div>
+                 </div>
+             </li>
+             <li class="aui-list-item ">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         年限
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="number" placeholder="请输入您的汽车年限" >
+                     </div>
+                 </div>
+             </li>
+          </ul>
+          <ul class="aui-list aui-select-list">
+              <li class="aui-list-item " >
+                <div class="aui-list-item-label" style="width:6rem;">
+                   有无贷款
+                </div>
+                 <div class="aui-list-item-inner">
+                   <label><input class="aui-radio" type="radio" name="radio2">是</label>
+                   <label><input class="aui-radio" type="radio" name="radio2">否</label>
+                 </div>
+             </li>
+           </ul>
+       </div>
+       <div class="border"></div>
+       <div class="fangchan">
+         <div class="fangchan_header">
+           信用贷款
+         </div>
+         <ul class="aui-list aui-form-list ">
+             <li class="aui-list-item ">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         工作单位
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input  placeholder="请输入您的工作单位" type="text">
+                     </div>
+                 </div>
+             </li>
+         </ul>
+         <ul class="aui-list aui-select-list">
+             <li class="aui-list-item " >
+               <div class="aui-list-item-label" style="width:6rem;">
+                  有无保单
+               </div>
+                <div class="aui-list-item-inner">
+                  <label><input class="aui-radio" type="radio" name="radio2">是</label>
+                  <label><input class="aui-radio" type="radio" name="radio2">否</label>
+                </div>
+            </li>
+             <!-- <div class="border"></div> -->
+          </ul>
+       </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/loan.js"></script>
+
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+      function FnOpenCity(){
+        var UIActionSelector = api.require('UIActionSelector');
+        UIActionSelector.open({
+            datas: 'widget://res/city.json',
+            layout: {
+                row: 5,
+                col: 3,
+                height: 30,
+                size: 12,
+                sizeActive: 14,
+                rowSpacing: 5,
+                colSpacing: 10,
+                maskBg: 'rgba(0,0,0,0.2)',
+                bg: '#fff',
+                color: '#888',
+                colorActive: '#f00',
+                colorSelected: '#f00'
+            },
+            animation: true,
+            cancel: {
+                text: '取消',
+                size: 12,
+                w: 90,
+                h: 35,
+                bg: '#fff',
+                bgActive: '#ccc',
+                color: '#888',
+                colorActive: '#fff'
+            },
+            ok: {
+                text: '确定',
+                size: 12,
+                w: 90,
+                h: 35,
+                bg: '#fff',
+                bgActive: '#ccc',
+                color: '#888',
+                colorActive: '#fff'
+            },
+            title: {
+                text: '请选择',
+                size: 12,
+                h: 44,
+                bg: '#eee',
+                color: '#888'
+            },
+            fixedOn: api.frameName
+        }, function(ret, err) {
+            if (ret) {
+                alert(JSON.stringify(ret));
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
+      }
+
+  </script>
+  </html>

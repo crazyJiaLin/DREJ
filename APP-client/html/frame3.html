@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>文档</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css">
+    <link rel="stylesheet" type="text/css" href="../css/frame3.css">
+</head>
+<body>
+  <div class="user_login">
+      <div class="user_head">
+        <a href="javascript:;" class="change_user_portrait"></a>
+      </div>
+      <div class="login" tapmode onclick="openLoginWin()">点击登录/注册</div>
+      <div class="edit-user-info" tapmode onclick="fnOpenFrm4();">
+        <i class="aui-iconfont aui-icon-gear"></i>
+      </div>
+  </div>
+  <div class="MiddleColumn">
+    <img src="../image/user-center/frame3_middleImg.jpg" alt="">
+    <div class="text">
+      <p class="text_tit">找好房上德融</p>
+      <p class="text_con">给您最可靠的服务</p>
+    </div>
+  </div>
+  <ul class="user_tool">
+    <li tapmode onclick="fnOpenFrm1();">
+      <span>消息提示</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+    <li  tapmode onclick="fnOpenFrm2();">
+      <span>联系客服</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+    <li  tapmode onclick="fnOpenFrm3();">
+      <span>用户反馈</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+    <li  tapmode onclick="fnOpenFrm4();">
+      <span>个人中心</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+    <li  tapmode onclick="fnOpenFrm5();">
+      <span>关于我们</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+    <li>
+      <span>设置中心</span>
+      <i class="aui-iconfont aui-icon-right"></i>
+    </li>
+  </ul>
+</body>
+<script src="../script/api.js" charset="utf-8"></script>
+<script src="../script/zepto.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+  function frame3Fn(){
+    console.log('frame3');
+  }
+  apiready = function(){
+    //通过获取的本地数据来填充页面内容
+    setDataByStorage();
+    $('.change_user_portrait').on('click',function(){
+      //获取图片并上传头像
+      choosePicAndUploadPortrait();
+    });
+  };
+
+  //获取图片并上传头像
+  function choosePicAndUploadPortrait(){
+    if(!$api.getStorage('mobile')){
+      return api.toast({
+          msg: '请先登录',
+          duration: 800,
+          location: 'middle'
+      });
+
+    }
+    api.getPicture({
+        sourceType: 'album',
+        encodingType: 'png',
+        mediaValue: 'pic',
+        destinationType: 'base64',
+        allowEdit: true,
+        quality: 100,
+        targetWidth: 300,
+        targetHeight: 300,
+        saveToPhotoAlbum: false
+    }, function(ret, err) {
+        if (ret) {
+          // alert(JSON.stringify(ret));
+          if(ret.base64Data == ''){
+            return;
+          }
+          //ajax上传头像
+          uploadPortrait(ret);
+        } else {
+            alert(JSON.stringify(err));
+        }
+    });
+  }
+  //通过获取的图片，ajax上传头像
+  function uploadPortrait(ret){
+    var base64Data1 = ret.base64Data;
+    var newFile = convertBase64UrlToBlob(base64Data1);
+    var oMyForm = new FormData();
+    oMyForm.append("mobile", $api.getStorage('mobile'));  //从本地获取手机号
+    oMyForm.append("imgName", ret.data);    //文件名称或路径
+    oMyForm.append("userfile", newFile);    //文件类型图片
+    $.ajax({
+      url : window.reqUrl + '/uploadPortrait',
+      type : 'post',
+      dataType : 'json',
+      cache : false,  //不需要缓存
+      processData : false,    //不需要进行数据转换
+      contentType : false,	 //默认数据传输方式是application,改为false，编程multipart
+      data : oMyForm,
+      success : function(data){
+        // alert(JSON.stringify(data));
+        var httpUrl = window.reqUrl + data.photoPath;
+        api.imageCache({
+            url: httpUrl
+        }, function(ret2, err2){
+            if( ret2 ){
+                //返回的是{data:'path',base64Data:'base64Data',duration:0}
+                // alert(JSON.stringify(ret2));
+                api.toast({
+                    msg: '头像上传成功',
+                    duration: 800,
+                    location: 'middle'
+                });
+                // console.log(JSON.stringify(ret2));
+                var timer3 = setTimeout(function(){
+                  var portraitPath = ret2.url;
+                  $api.setStorage('portrait', httpUrl);
+                  window.location.reload();
+                },800);
+            }else{
+                 $api.setStorage('portrait', httpUrl);
+            }
+        });
+      },
+      error : function(err){
+        alert(JSON.stringify(err));
+      }
+    });
+  }
+    /**
+     * 将以base64的图片url数据转换为Blob
+     * @param urlData
+     *         用url方式表示的base64图片数据
+     */
+    function convertBase64UrlToBlob(urlData){
+
+        var bytes=window.atob(urlData.split(',')[1]);        //去掉url的头，并转换为byte
+
+        //处理异常,将ascii码小于0的转换为大于0
+        var ab = new ArrayBuffer(bytes.length);
+        var ia = new Uint8Array(ab);
+        for (var i = 0; i < bytes.length; i++) {
+            ia[i] = bytes.charCodeAt(i);
+        }
+
+        return new Blob( [ab] , {type : 'image/png'});
+    }
+
+    function setDataByStorage(){//通过获取的本地数据来填充页面内容
+      var username = $api.getStorage('username');
+      var portrait = $api.getStorage('portrait');
+      if(portrait){
+        // console.log(portrait);
+        $('.change_user_portrait').css('background-image','url('+ portrait +')');
+      }
+      if(username){
+        $('.login').html(username);
+      }else{
+        $('.login').html('登录/注册');
+      }
+    }
+
+    function openLoginWin(){  //打开登录页
+        api.openWin({
+            name: 'login',
+            url: './login.html',
+            pageParam: {
+                name: 'test'
+            }
+        });
+
+    }
+    function fnOpenFrm1(){
+      api.openWin({
+          name: 'set_frame1',
+          url: './set_frame1.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function fnOpenFrm2(){
+      api.openWin({
+          name: 'set_frame2',
+          url: './set_frame2.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function fnOpenFrm3(){
+      api.openWin({
+          name: 'set_frame3',
+          url: './set_frame3.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function fnOpenFrm4(){
+      api.openWin({
+          name: 'set_frame4',
+          url: './set_frame4.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function fnOpenFrm5(){
+      api.openWin({
+          name: 'set_frame5',
+          url: './set_frame5.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+
+</script>
+
+</html>

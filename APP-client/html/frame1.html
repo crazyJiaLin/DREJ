@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>端API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/frame1.css"/>
+</head>
+<body>
+  <header class="header" id="header">
+      看房
+  </header>
+
+  <div class="no-login-wrapper">
+    <div class="nologin"></div>
+    <div class="frame1_login">您还没有登录哦</div>
+    <button class="go_login" onclick="openLoginWin()">点我登录</button>
+  </div>
+
+  <div class="is-login-wrapper">
+    <div class="no-data-img"></div>
+    <div class="frame1_login">目前没有看房记录</div>
+  </div>
+
+</body>
+<script src="../script/api.js" charset="utf-8"></script>
+<script src="../script/zepto.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  apiready = function(){
+    //通过获取本地数据来判断用户是否登陆
+    var username = $api.getStorage('username');
+    if(username){
+      $('.no-login-wrapper').css('display','none');
+      $('.is-login-wrapper').css('display','block');
+    }else{
+      $('.no-login-wrapper').css('display','block');
+      $('.is-login-wrapper').css('display','none');
+    }
+  };
+
+  function openLoginWin(){
+    api.openWin({
+		    name: 'login',
+		    url: './login.html',
+	    	animation: {
+	    		type:"none",
+			    subType:"from_right"
+	    	}
+		});
+
+  }
+  </script>
+</html>

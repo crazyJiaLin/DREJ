@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/sell_house.css"/>
+      <style>
+
+      </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <span class="back" tapmode onclick="api.closeWin()"></span>
+      地图
+    </header>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+        api.parseTapmode();
+        var header = $api.byId('header');
+        var headerH = $api.offset(header).h;
+        api.openFrame({
+            name: 'map_frm',
+            url: './map_frm.html',
+            bounces: false,
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: 'auto'
+            }
+        })
+
+      };
+  </script>
+  </html>

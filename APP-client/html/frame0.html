@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <title>首页</title>
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+  <link rel="stylesheet" type="text/css" href="../css/frame0.css"/>
+
+    <style>
+    img.icon {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+    }
+    .aui-grid-label {
+        padding-top: 0.5rem;
+        font-size: 0.7rem !important;
+    }
+    .goods-item {
+        border: 1px solid #eee;
+        text-align: center;
+        padding: 0.5rem;
+    }
+    .goods-item img {
+        display: block;
+        width: 100%;
+        height: 7rem;
+    }
+    .title {
+        color: #666;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .title p {
+        font-size: 0.6rem;
+        color: #ccc;
+    }
+    .goods-title {
+        font-size: 0.7rem;
+        color: #333 !important;
+    }
+    .hot img {
+        width: 3rem;
+        display: block;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+  <section class="aui-content">
+      <div id="aui-slide">
+          <div class="aui-slide-wrap" >
+              <div class="aui-slide-node">
+                  <img src="../image/home/b1.jpg" />
+              </div>
+              <div class="aui-slide-node">
+                  <img src="../image/home/b2.jpg" />
+              </div>
+              <div class="aui-slide-node">
+                  <img src="../image/home/b3.jpg" />
+              </div>
+          </div>
+          <div class="aui-slide-page-wrap"><!--分页容器--></div>
+      </div>
+  </section>
+  <section class="aui-content aui-margin-b-15">
+      <div class="aui-grid aui-padded-l-10 aui-padded-r-10">
+          <div class="aui-row aui-row-padded">
+              <div class="aui-col-5" taomode onclick="fnOpenRentSearch()">
+                  <img src="../image/home/icon1.png" class="icon">
+                  <div class="aui-grid-label">租房</div>
+              </div>
+              <div class="aui-col-5" taomode onclick="fnOpenSecondSearch()">
+                  <img src="../image/home/icon2.png" class="icon">
+                  <div class="aui-grid-label">二手房</div>
+              </div>
+              <div class="aui-col-5" taomode onclick="fnOpenNewSearch()">
+                  <img src="../image/home/icon3.png" class="icon">
+                  <div class="aui-grid-label">新房</div>
+              </div>
+              <div class="aui-col-5" taomode onclick="fnOpenMap()">
+                  <img src="../image/home/icon4.png" class="icon">
+                  <div class="aui-grid-label">地图</div>
+              </div>
+              <div class="aui-col-5" tapmode onclick="fnOpenSellHouse()">
+                  <img src="../image/home/icon5.png" class="icon" >
+                  <div class="aui-grid-label">我要卖房</div>
+              </div>
+              <div class="aui-col-5"  tapmode onclick="fnOpenRentOut()">
+                  <img src="../image/home/icon6.png" class="icon">
+                  <div class="aui-grid-label">我要出租</div>
+              </div>
+              <div class="aui-col-5" tapmode onclick="fnOpenHouseValue()">
+                  <img src="../image/home/icon7.png" class="icon">
+                  <div class="aui-grid-label">房屋估价</div>
+              </div>
+              <div class="aui-col-5" tapmode onclick="fnOpenLoan()">
+                  <img src="../image/home/icon8.png" class="icon">
+                  <div class="aui-grid-label">我要贷款</div>
+              </div>
+              <div class="aui-col-5">
+                  <img src="../image/home/icon9.png" class="icon">
+                  <div class="aui-grid-label">贷款助手</div>
+              </div>
+              <div class="aui-col-5" tapmode onclick="fnOpenHouseEncyclopedia()">
+                  <img src="../image/home/icon10.png" class="icon">
+                  <div class="aui-grid-label">房产百科</div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class="houseRecommendation">
+      精品房源
+  </div>
+  <div class="house_recommendation_wrapper rent_rec_wrapper">
+    <div class="house_rec_title">
+        租房推荐
+    </div>
+    <div class="slider_side">
+        <div class="silder_box">
+          <ul class="silder_wrap">
+            <li class="house_box" id="123">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐1">
+              <div class="rec_title">
+                <span>精品房源1，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐2">
+              <div class="rec_title">
+                <span>精品房源2，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐3">
+              <div class="rec_title">
+                <span>精品房源3，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐4">
+              <div class="rec_title">
+                <span>精品房源4，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐5">
+              <div class="rec_title">
+                <span>精品房源5，就在德融</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="house_recommendation_wrapper second_hand_rec_wrapper">
+    <div class="house_rec_title">
+        二手房推荐
+    </div>
+    <div class="slider_side">
+        <div class="silder_box">
+          <ul class="silder_wrap">
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐1">
+              <div class="rec_title">
+                <span>精品房源1，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐2">
+              <div class="rec_title">
+                <span>精品房源2，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐3">
+              <div class="rec_title">
+                <span>精品房源3，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐4">
+              <div class="rec_title">
+                <span>精品房源4，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐5">
+              <div class="rec_title">
+                <span>精品房源5，就在德融</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="house_recommendation_wrapper no_border_bottom">
+    <div class="house_rec_title">
+        新房推荐
+    </div>
+    <div class="slider_side">
+        <div class="silder_box">
+          <ul class="silder_wrap">
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐1">
+              <div class="rec_title">
+                <span>精品房源1，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐2">
+              <div class="rec_title">
+                <span>精品房源2，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐3">
+              <div class="rec_title">
+                <span>精品房源3，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐4">
+              <div class="rec_title">
+                <span>精品房源4，就在德融</span>
+              </div>
+            </li>
+            <li class="house_box">
+              <img src="../image/home/rec_rent01.jpg" alt="租房推荐5">
+              <div class="rec_title">
+                <span>精品房源5，就在德融</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/zepto.min.js"></script>
+  <script type="text/javascript" src="../script/aui-slide.js"></script>
+  <script type="text/javascript" src="../script/frame0.js"></script>
+</html>

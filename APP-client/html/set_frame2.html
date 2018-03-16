@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/set.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <style>
+      .aui-chat .aui-chat-right .aui-chat-content {
+          background-color: #b3e5fc;
+          right: 0.5rem;
+          float: right;
+        }
+        .aui-chat .aui-chat-right .aui-chat-arrow {
+            background-image: -webkit-linear-gradient(45deg, #b3e5fc, #b3e5fc 50%, transparent 50%);
+            background-image: linear-gradient(45deg, #b3e5fc, #b3e5fc 50%, transparent 50%);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+            right: -0.25rem;
+        }
+      </style>
+  </head>
+  <body>
+    <header class="header">
+      <span class="back" onclick=api.closeWin();></span>
+        联系客服
+    </header>
+
+    <section class="aui-chat">
+        <div class="aui-chat-header">2016年7月13日</div>
+        <div class="aui-chat-item aui-chat-left">
+            <div class="aui-chat-media">
+                <img src="../image/baike/touxiang.jpg" />
+            </div>
+            <div class="aui-chat-inner">
+                <div class="aui-chat-name">德融客服 <span class="aui-label aui-label-warning">2.0</span></div>
+                <div class="aui-chat-content">
+                    <div class="aui-chat-arrow"></div>
+                    您好，德融客服很高兴为您服务，请您输入要咨询的问题
+                </div>
+            </div>
+        </div>
+        <div class="aui-chat-item aui-chat-right">
+            <div class="aui-chat-media">
+                <img src="../image/baike/touxiang_01.jpg" />
+            </div>
+            <div class="aui-chat-inner">
+                <div class="aui-chat-name">流浪男</div>
+                <div class="aui-chat-content">
+                    <div class="aui-chat-arrow"></div>
+                    你好！
+                </div>
+                <div class="aui-chat-status">
+                    <!-- <i class="aui-iconfont aui-icon-info aui-text-danger"></i> -->
+                </div>
+            </div>
+        </div>
+
+      </section>
+      <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="footer_input">
+          <input type="text" name="" value="" placeholder="发送消息">
+        </div>
+        <div class="footer_button">
+          <button type="button" name="button">发送</button>
+        </div>
+      </footer>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+  </script>
+  </html>

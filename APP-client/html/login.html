@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/login_regest.css"/>
+  </head>
+  <body>
+      <header class="login_header">
+        <span class="back" onclick="closeLoginWin()"></span>
+        登录
+      </header>
+      <section class="login_content">
+          <div class="logo_content">
+            <img src="../icon/icon150x150.png" alt="logo">
+          </div>
+          <div class="info_row">
+            <input type="number" class="login_input mobile" placeholder="请输入您的手机号">
+            <i class="aui-iconfont aui-icon-close"></i>
+          </div>
+          <div class="info_row">
+            <input type="password" class="login_input password" placeholder="请输入您的密码">
+            <i class="aui-iconfont aui-icon-close"></i>
+          </div>
+          <button class="go_login" onclick="login()">立即登录</button>
+          <div class="login_select">
+            <span class="go_regest" onclick="openRegestWin()">立即注册</span>
+            <span class="lost_password" onclick="openResetPsw()">忘记密码</span>
+          </div>
+          <div class="errArea"></div>
+      </section>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/zepto.min.js"></script>
+  <script type="text/javascript" src="../script/regest_login.js"></script>
+  <script type="text/javascript">
+  apiready = function(){
+
+  };
+  function login(){
+    //获取参数
+    var username = $('.mobile').val();
+    var password = $('.password').val();
+    //正则校验手机号码格式
+    if(!(/^1[3|4|5|8][0-9]\d{8}$/.test(username))){
+        $('.errArea').html('手机号格式错误');
+        return;
+    }
+    //开始发送数据
+    api.ajax({
+        url: window.reqUrl+'/login',  //请求地址
+        method: 'post',        //请求方式
+        data: {                //传送数据，参考接口文档
+            values: {
+                mobile: username,
+                password : password
+            }
+        }
+    },function(ret, err){          //回调函数
+        if (ret) {
+          if(ret.errCode == 1){
+              //登陆成功回调函数
+             loginSuccess(ret);
+          }else{        //登陆错误
+            api.toast({
+                msg: ret.errMsg,
+                duration: 800,
+                location: 'middle'
+            });
+          }
+        } else {  //ajax出错
+          api.toast({
+              msg: '登陆失败',
+              duration: 800,
+              location: 'middle'
+          });
+        }
+    });
+  }
+  function loginSuccess(ret){
+    api.toast({
+        msg: ret.errMsg,
+        duration: 800,
+        location: 'middle'
+    });
+    console.log(JSON.stringify(ret));
+    if(ret.errCode == 1){
+      //将用户信息存入本地数据库
+      $api.setStorage('userId', ret.userInfo.id);
+      $api.setStorage('username', ret.userInfo.username);
+      $api.setStorage('mobile', ret.userInfo.mobile);
+      var curPortrait = ret.userInfo.portrait ? window.reqUrl + ret.userInfo.portrait : '../image/user-center/default-user.png';
+      $api.setStorage('portrait', curPortrait);
+      $api.setStorage('inform', ret.userInfo.inform);
+      var timer = setTimeout(function(){
+        api.execScript({
+            name: 'root',
+            frameName: 'frame3',
+            script: 'window.location.reload();'
+        });
+        api.execScript({
+            name: 'root',
+            frameName: 'frame1',
+            script: 'window.location.reload();'
+        });
+        api.closeWin({
+            name: 'login'
+        });
+      },500)
+    }
+
+  }
+  </script>
+  </html>

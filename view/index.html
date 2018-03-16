@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title>德融E家后台测试</title>
+        <style>
+            .test-api{
+                width: 90%;
+                padding: 0 10px;
+                margin: 20px auto;
+                border: 1px solid #ccc;
+                font-family: '微软雅黑';
+                line-height: 80px;
+            }
+            .test-api button{
+                display: inline-block;
+                width: 80px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: tomato;
+                color: #fff;
+                margin:5px 20px;
+            }
+            .input-row{
+                width:100%;
+                height: 30px;
+                padding: 0 20px;
+            }
+            .input-row label{
+                display: block;
+                width: 100px;
+                height: 100%;
+                float: left;
+                margin: 0;
+                padding: 0;
+                line-height: 30px;
+            }
+            .input-row input{
+                width: 200px;
+                float: left;
+                margin:5px 0;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="test-api">
+            <button class="login">登陆</button>
+            <button class="regest">注册</button>
+            <button class="update-psd">更新密码</button>
+            <button class="reset-psd">重置密码</button>
+            <br>
+            <input type="file" name="portrait-file1" class="portrait-file">
+            <button class="update-portrait">更新头像</button>
+            <button class="update-portrait2">更新头像2</button>
+            <div class="img-wrapper"></div>
+            <br>
+        </div>
+        <div class="test-api">
+            <div class="input-row">
+                <label>房源标题</label>
+                <input type="text" class="house-tile">
+            </div>
+            <div class="input-row">
+                <label>面积</label>
+                <input type="text" class="house-area">
+            </div>
+            <button class="submit-rent-house">发布房源</button>
+        </div>
+		
+		
+		<!--资源引用-->
+		<script src="./js/jquery-3.1.0.min.js"></script>
+		<script src="./js/user-ajax.js"></script>
+		<script src="./js/rent-house-ajax-test.js"></script>
+        
+	</body>
+</html>

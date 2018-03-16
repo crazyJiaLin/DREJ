@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/look_house.css"/>
+      <style>
+
+      </style>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <span class="back" onclick=api.closeWin();></span>
+        我的行程
+        <div class="aui-bar aui-bar-tab" id="list">
+            <div class="aui-bar-tab-item aui-active" tapmode>
+                <div class="aui-bar-tab-label">未完成</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <div class="aui-bar-tab-label">已完成</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode>
+                <div class="aui-bar-tab-label">全部</div>
+            </div>
+        </div>
+    </header>
+
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript" src="../script/aui-tab.js"></script>
+  <script type="text/javascript">
+      var header = $api.byId('header');
+      var headerH = $api.offset(header).h;
+      var list = $api.byId('list');
+      var listH = $api.offset(list).h;
+      var height = headerH + listH;
+      apiready = function(){
+        api.openFrame({
+            name: 'look_house_frm',
+            url: './look_house_frm.html',
+            rect: {
+                x: 0,
+                y: height,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            // bounces: true,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+
+      };
+      var tab = new auiTab({
+          element:document.getElementById("list"),
+          index:1,
+          repeatClick:false
+      },function(ret){
+          console.log(ret);
+      });
+  </script>
+  </html>

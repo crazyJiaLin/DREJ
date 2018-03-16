@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>title</title>
+      <link rel="stylesheet" type="text/css" href="../css/sell_house.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <style>
+
+      </style>
+  </head>
+  <body>
+    <div class="data-content">
+      <!-- 房源信息 -->
+      <div>
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        房源标题
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="请输入您的房源标题" id="title">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        面积
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="number" placeholder="单位为平方米，请不要输入单位" id="area">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        楼层
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="number" placeholder="单位为层，请不要输入单位" id="floor">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        月租
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="number" placeholder="单位为元，请不要输入单位" id="rent_money">
+                    </div>
+                </div>
+            </li>
+         </ul>
+      </div>
+
+
+       <!-- 分割块 -->
+       <div class="blank"></div>
+       <div>
+         <ul class="aui-list aui-form-list">
+             <li class="aui-list-item">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         户型
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="text" placeholder="请输入户型" id="house_type">
+                     </div>
+                 </div>
+             </li>
+             <li class="aui-list-item">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         朝向
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="text" placeholder="请输入朝向" id="towards">
+                     </div>
+                 </div>
+             </li>
+             <li class="aui-list-item">
+                 <div class="aui-list-item-inner">
+                     <div class="aui-list-item-label">
+                         挂牌时间
+                     </div>
+                     <div class="aui-list-item-input">
+                         <input type="text"  placeholder="yyyy-mm-dd" id="accomplish_date">
+                     </div>
+                 </div>
+             </li>
+          <ul>
+            <ul class="aui-list aui-select-list">
+              <li class="aui-list-item">
+                <div class="aui-list-item-label" style="width:6rem;">
+                   装修
+                </div>
+                 <div class="aui-list-item-inner" id="decoration">
+                   <label><input class="aui-radio" type="radio" name="decoration" value="毛坯">毛坯</label>
+                   <label><input class="aui-radio" type="radio" name="decoration" value="简装" checked="checked">简装</label>
+                   <label><input class="aui-radio" type="radio" name="decoration" value="精装">精装</label>
+                 </div>
+             </li>
+            </ul>
+       </div>
+       <!-- 分割块 -->
+       <div class="blank"></div>
+
+       <!-- 客户信息 -->
+        <div>
+          <ul class="aui-list aui-form-list">
+              <li class="aui-list-item">
+                  <div class="aui-list-item-inner">
+                      <div class="aui-list-item-label">
+                          称呼
+                      </div>
+                      <div class="aui-list-item-input">
+                          <input type="text" placeholder="请输入姓名" id="release_name">
+                      </div>
+                  </div>
+              </li>
+              <li class="aui-list-item">
+                  <div class="aui-list-item-inner">
+                      <div class="aui-list-item-label">
+                          联系方式
+                      </div>
+                      <div class="aui-list-item-input">
+                          <input type="number" placeholder="请输入手机号" id="release_phone">
+                      </div>
+                  </div>
+              </li>
+              <li class="aui-list-item">
+                  <div class="aui-list-item-inner">
+                      <div class="aui-list-item-label">
+                          收款方式
+                      </div>
+                      <div class="aui-list-item-input">
+                          <input type="text" placeholder="请输入收款方式" id="pay_way">
+                      </div>
+                  </div>
+              </li>
+              <li class="aui-list-item">
+                  <div class="aui-list-item-inner">
+                      <div class="aui-list-item-label">
+                          出租方式
+                      </div>
+                      <div class="aui-list-item-input">
+                          <input type="text" placeholder="请输入出租方式" id="rent_way">
+                      </div>
+                  </div>
+              </li>
+           </ul>
+        </div>
+        <div class="miaoshu">
+            <div class="miaoshu_title">
+              房屋描述
+            </div>
+            <div class="shuru">
+                <textarea id="description"></textarea>
+            </div>
+        </div>
+        <div class="add_photos">
+            <div class="photos">
+              添加照片
+              <div class="photo_list" id="pic">
+
+              </div>
+            </div>
+            <div class="add_button" onclick="OpenFnPic();"></div>
+        </div>
+    </div>
+      <div class="bottom" id="send-rent-house">
+        发布房源
+      </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script src="../script/zepto.js" charset="utf-8"></script>
+  <script src="../script/sell-house.js" charset="utf-8"></script>
+  </html>

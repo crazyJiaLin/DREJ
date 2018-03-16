@@ -1,0 +1,195 @@
+#detail_slider_pic_wrapper .aui-slide-node{
+  background: center center no-repeat;
+  background-image: url('../image/detail/detail-banner02.jpg');
+  background-size: cover;
+}
+#detail_slider_pic_wrapper .aui-slide-node img{
+  opacity: 0 !important;
+}
+.text-light {
+  color: #999;
+}
+.text-dark {
+  color: #333 !important;
+}
+.bg-white {
+  background: #ffffff;
+}
+.aui-list .aui-list-item-label-icon.label-text {
+  line-height: 2.1rem;
+  align-items: baseline;
+  -webkit-align-items: baseline;
+}
+.aui-tab-item {
+  width: 2rem;
+  margin: 0 auto;
+}
+.blank {
+  width: 100%;
+  height: 0.5rem;
+  background: #f2f2f2;
+}
+.site{
+  padding-left: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.site_pic{
+  background: url(../image/site.png) no-repeat;
+  width: 1rem;
+  height: 1rem;
+  background-size: 100%;
+  float: left;
+}
+.detail_item_01 {
+  width: 100%;
+  height: 4rem;
+}
+.detail_pic {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  background: url(../image/house_type.png) no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  background-position: center;
+  border: 1px solid #f4ea2a;
+  float: left;
+}
+.detail {
+  margin: 0.6rem;
+  padding-top: 0.8rem;
+  font-size: 14px;
+  color: #999;
+  float: left;
+  line-height: 1.5rem;
+}
+.house_type {
+  font-size: 16px;
+  color: black;
+  margin-left: 0.1rem;
+}
+.item_detail {
+  margin: 0.6rem;
+  padding-top: 0.8rem;
+  font-size: 14px;
+  color: #999;
+  float: left;
+  line-height: 1.5rem;
+}
+.mianji_pic {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  background: url(../image/area.png) no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  background-position: center;
+  border: 1px solid #208efd;
+  float: left;
+}
+.area{
+  font-size: 16px;
+  color: black;
+  margin: 0.1rem;
+}
+.detail_item_02 {
+  width: 100%;
+  height: 7.3rem;
+  clear: both;
+}
+.item{
+  width: 50%;
+  float: left;
+  height: auto;
+  background:#ffffff;
+}
+.level{
+  margin: 0.5rem 0.6rem 0.3rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+  color: #999;
+}
+.floor{
+  padding-left: 0.2rem;
+  color: black;
+}
+.decoration{
+  padding-left: 0.2rem;
+  color: black;
+}
+.towards{
+  padding-left: 0.2rem;
+  color: black;
+}
+.pay_way{
+  padding-left: 0.2rem;
+  color: black;
+}
+.rent_way{
+  padding-left: 0.2rem;
+  color: black;
+}
+.accomplish_date {
+  padding-left: 0.2rem;
+  color: black;
+}
+.lianxi{
+  width: 100%;
+  padding: 0.6rem;
+  color: #999;
+}
+.release_phone{
+  color: black;
+  padding-left: 0.2rem;
+  color: black;
+}
+.time{
+  width: 100%;
+  padding: 0.6rem;
+  color: #999;
+}
+.release_time{
+  color: black;
+  padding-left: 0.2rem;
+  color: black;
+}
+.detail_item_03 {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+}
+.message_pic {
+  height: 1rem;
+  width: 1rem;
+  background: url(../image/message.png) no-repeat;
+  background-size: 100%;
+  margin: 0.6rem;
+  float: left;
+}
+.detail_item_03_caption{
+  margin: 0.5rem auto;
+  float: left;
+}
+.description {
+  padding: 0.6rem;
+  width: 100%;
+  height: 5rem;
+  clear: both;
+  text-indent: 2em;
+}
+.aui-icon-comment{
+  float: right;
+  padding-right: 0.6rem;
+  font-size: 1rem;
+  color: #208efd;
+}
+.aui-icon-phone {
+  float: right;
+  padding-right: 0.6rem;
+  font-size: 1rem;
+  color: #00ac28;
+}
+.headline {
+  font-size: 1.1rem;
+  font-weight: bold;
+}

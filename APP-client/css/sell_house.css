@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.back{
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../image/back.png') center center no-repeat;
+  background-size: 60%;
+}
+.aui-list-item{
+  height: 2.5rem;
+}
+.blank {
+  width: 100%;
+  height: 0.5rem;
+  background: #f2f2f2;
+}
+.data-content{
+  padding-bottom: 3.2rem;
+}
+.bottom{
+  width: 100%;
+  height: 3rem;
+  background: #00ac28;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  color: #ffffff;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 0.9rem;
+}
+.text{
+  width: 100%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  background: #ffffff;
+}
+.miaoshu {
+  height: 4rem;
+  border-bottom: 1px solid #f2f2f2;
+  padding-left:0.8rem;
+  width: 100%;
+  background: #ffffff;
+}
+.miaoshu_title{
+  line-height: 4rem;
+  float: left;
+  width: 4rem;
+}
+.shuru{
+  float: left;
+  padding: 0.2rem;
+}
+.add_photos {
+  width: 100%;
+  padding: 0.8rem;
+  /*height: auto;*/
+  background: #ffffff;
+}
+.add_button{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  border: 1px solid #cdcdcd;
+  background: url(../image/sell_house/camera.png) no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+.photos {
+  height: 12rem;
+  width: 100%;
+  /*border: 1px solid #f2f2f2;*/
+}
+.photo_list{
+  width: 100%;
+  padding: 5%;
+  list-style-type: none;
+  clear: both;
+}
+.photos_item{
+  border: 1px solid #999;
+  margin: 0.2rem;
+  float: left;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /*display: none;*/
+}

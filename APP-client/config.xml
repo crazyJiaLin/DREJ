@@ -1,0 +1,30 @@
+ <widget id="A6061084339701"  version="0.0.1">
+    <name>DREJTest</name>
+    <description>
+        Example For APICloud.
+    </description>
+    <author email="developer@apicloud.com" href="http://www.apicloud.com">
+        Developer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />    <feature name="bMap">        <param name="android_api_key" value="tRp4cmWPHEKEvwaE1aosY8S3GtKlgNPU" />        <param name="ios_api_key" value="n3GgCezOluBT6NHQrYy35wAiPM0AGeT3" />  </feature>  <feature name="baiduLocation">    <param name="apiKey" value="8C29B51C-0BE5-BFC2-CE5E-69D3449EF77F" /></feature>    <preference name="pageBounce" value="false"/>
+	<preference name="appBackground" value="rgba(0,0,0,0.0)"/>
+	<preference name="windowBackground" value="rgba(0,0,0,0.0)"/>
+	<preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)"/>
+	<preference name="hScrollBarEnabled" value="true"/>
+	<preference name="vScrollBarEnabled" value="true"/>
+	<preference name="autoLaunch" value="true"/>
+	<preference name="fullScreen" value="false"/>
+	<preference name="autoUpdate" value="true" />
+	<preference name="smartUpdate" value="false" />
+	<preference name="debug" value="true"/>  <preference name="iOS7StatusBarAppearance" value="fasle" />
+	<preference name="statusBarAppearance" value="false"/>
+	<permission name="readPhoneState" />
+	<permission name="camera" />
+	<permission name="record" />
+	<permission name="location" />
+	<permission name="fileSystem" />
+	<permission name="internet" />
+	<permission name="bootCompleted" />
+	<permission name="hardware" />
+</widget>
